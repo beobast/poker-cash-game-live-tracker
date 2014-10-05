@@ -19,7 +19,7 @@ Then edit `cash-game.csv` file and add a new line :
 
 Example :
 ```
-session,date,duration,value
+session,date,duration,winnings
 0,00/00/00,0.0,0
 1,21/07/14,2,210
 2,28/07/14,2.5,100
