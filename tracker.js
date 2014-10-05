@@ -40,7 +40,7 @@ d3.csv("cash-game.csv", function(error, data) {
         var totalLosses = 0;
 
         data.forEach(function(d) {
-            d.value = +d.value;
+            d.value = +d.winnings;
             totalEarnings += d.value;
             totalHours += +d.duration;
             sessions = d.session;
