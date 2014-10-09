@@ -119,12 +119,12 @@ d3.csv("cash-game.csv", function(error, data) {
         svg.append("text")
             .attr("x", margin.left)
             .attr("y", 9*margin.top)
-            .text("Winning sessions : " + d3.round(winningSessions/sessions, 2)*100 + " % - Average : " + d3.round(totalWins/winningSessions, 2) + " €");
+            .text("Winning sessions : " + d3.round(winningSessions/sessions*100, 2) + " % - Average : " + d3.round(totalWins/winningSessions, 2) + " €");
 
         svg.append("text")
             .attr("x", margin.left)
             .attr("y", 10*margin.top)
-            .text("Losing sessions : " + d3.round(losingSessions/sessions, 2)*100 + " % - Average : " + d3.round(totalLosses/losingSessions, 2) + " €");
+            .text("Losing sessions : " + d3.round(losingSessions/sessions*100, 2) + " % - Average : " + d3.round(totalLosses/losingSessions, 2) + " €");
 
         var detailsDate = svg.append("text")
                              .attr("x", margin.left)
