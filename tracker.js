@@ -38,6 +38,7 @@ d3.csv("cash-game.csv", function(error, data) {
         var losingSessions = 0;
         var totalWins = 0;
         var totalLosses = 0;
+        var bbWon = 0;
 
         data.forEach(function(d) {
             d.value = +d.winnings;
@@ -45,6 +46,7 @@ d3.csv("cash-game.csv", function(error, data) {
             totalHours += +d.duration;
             sessions = d.session;
             d.total = totalEarnings;
+            bbWon += d3.round(d.value/d.bb, 2);
             if (d.value > 0) {
                 winningSessions += 1;
                 totalWins += d.value;
@@ -104,7 +106,7 @@ d3.csv("cash-game.csv", function(error, data) {
         svg.append("text")
             .attr("x", margin.left)
             .attr("y", 6*margin.top)
-            .text(d3.round((100*totalEarnings)/(2*totalHours*handsPerHour)) + " big blinds / 100 hands");
+            .text(d3.round((100*bbWon)/(totalHours*handsPerHour)) + " big blinds / 100 hands");
 
         svg.append("text")
             .attr("x", margin.left)
