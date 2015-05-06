@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 900 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = window.innerWidth - 100 - margin.left - margin.right,
+    height = window.innerHeight - 100 - margin.top - margin.bottom;
 
 var bisect = d3.bisector(function(d) { return d.session; }).left;
 
