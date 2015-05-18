@@ -24,3 +24,13 @@ body {
     fill: steelblue;
     stroke: steelblue;
 }
+
+.week-results rect {
+    fill: steelblue;
+}
+
+.week-results text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}

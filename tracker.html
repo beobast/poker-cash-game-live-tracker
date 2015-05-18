@@ -2,12 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="tracker.css">
-        <script src="d3.v3.min.js"></script>
+        <link rel="stylesheet" href="css/tracker.css">
+        <link rel="stylesheet" href="css/semantic.min.css">
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/d3.v3.min.js"></script>
+        <script type="text/javascript" src="js/semantic.min.js"></script>
+        <script type="text/javascript" src="js/summary.js"></script>
+        <script type="text/javascript" src="js/graph.js"></script>
         <title>Poker Cash Game Live Tracker</title>
     </head>
 
     <body>
-        <script type="text/javascript" src="tracker.js"></script>
+        <div class="ui grid">
+            <div class="one wide column"></div>
+            <div class="two wide column">
+                <div class="ui fluid vertical menu">
+                    <a class="active item summary">Summary</a>
+                    <a class="item graph">Graph</a>
+                    <a class="item">Detailed</a>
+                    <a class="item">Average</a>
+                </div>
+            </div>
+            <div class="twelve wide column">
+                <div class="content"></div>
+            </div>
+            <div class="one wide column"></div>
+        </div>
+        <script type="text/javascript" src="js/tracker.js"></script>
     </body>
 </html>
