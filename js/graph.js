@@ -1,4 +1,4 @@
-/* global buildGraph:true, d3 */
+/* global buildGraph:true, d3, $ */
 
 buildGraph = null;
 
@@ -8,7 +8,7 @@ buildGraph = null;
     buildGraph = 
         function (data, div) {
 
-        div.empty();
+        $(div).empty();
 
         var margin = {top: 20, right: 20, bottom: 30, left: 50},
             width = 1200 - margin.left - margin.right,
@@ -16,25 +16,17 @@ buildGraph = null;
 
         var bisect = d3.bisector(function(d) { return d.session; }).left;
 
-        var x = d3.scale.linear()
-        .range([0, width]);
+        var x = d3.scale.linear().range([0, width]);
+        var y = d3.scale.linear().range([height, 0]);
 
-        var y = d3.scale.linear()
-        .range([height, 0]);
-
-        var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
-
-        var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left");
+        var xAxis = d3.svg.axis().scale(x).orient("bottom");
+        var yAxis = d3.svg.axis().scale(y).orient("left");
 
         var line = d3.svg.line()
-        .x(function(d) { return x(d.session); })
-        .y(function(d) { return y(d.total); });
+                     .x(function(d) { return x(d.session); })
+                     .y(function(d) { return y(d.total); });
 
-        var svg = d3.select('.content').append("svg")
+        var svg = d3.select(div).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")

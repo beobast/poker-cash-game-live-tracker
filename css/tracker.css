@@ -2,6 +2,7 @@ body {
   font: 10px sans-serif;
 }
 
+/* Graph */
 .axis path,
 .axis line {
   fill: none;
@@ -25,12 +26,32 @@ body {
     stroke: steelblue;
 }
 
-.week-results rect {
+/*****************************/
+
+
+/* Average */
+.chart rect {
+    stroke: white;
+    fill-opacity: .6;
+    fill: steelblue;
+
+}
+.bar.positive {
     fill: steelblue;
 }
 
-.week-results text {
-    fill: white;
-    font: 10px sans-serif;
-    text-anchor: end;
+.bar.negative {
+    fill: brown;
 }
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+/*********************************/

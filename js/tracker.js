@@ -1,4 +1,4 @@
-/* global d3, $, buildSummary, buildGraph */
+/* global d3, $, buildSummary, buildGraph, buildAverage, buildMonths */
 
 (function () {
     'use strict';
@@ -18,17 +18,31 @@
     $('.item.summary').click(function() {
         var self = $(this);
         $('.menu').find('.item').removeClass('active');
-        processData('cash-game.csv', $('.content'), buildSummary);
+        processData('cash-game.csv', '.content', buildSummary);
         self.addClass('active');
     });
 
     $('.item.graph').click(function() {
         var self = $(this);
         $('.menu').find('.item').removeClass('active');
-        processData('cash-game.csv', $('.content'), buildGraph);
+        processData('cash-game.csv', '.content', buildGraph);
         self.addClass('active');
     });
 
-    processData('cash-game.csv', $('.content'), buildSummary);
+    $('.item.average').click(function() {
+        var self = $(this);
+        $('.menu').find('.item').removeClass('active');
+        processData('cash-game.csv', '.content', buildAverage);
+        self.addClass('active');
+    });
+
+    $('.item.months').click(function() {
+        var self = $(this);
+        $('.menu').find('.item').removeClass('active');
+        processData('cash-game.csv', '.content', buildMonths);
+        self.addClass('active');
+    });
+
+    processData('cash-game.csv', '.content', buildSummary);
 
 }());
